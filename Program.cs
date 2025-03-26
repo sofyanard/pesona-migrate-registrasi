@@ -6,6 +6,10 @@ using Microsoft.Extensions.Logging;
 using pesona_migrate_registrasi;
 
 var host = Host.CreateDefaultBuilder(args)
+    .ConfigureAppConfiguration((hostingContext, config) =>
+    {
+        config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+    })
     .ConfigureServices((context, services) =>
     {
         // Add services to the container.
@@ -30,7 +34,14 @@ using (var scope = host.Services.CreateScope())
     {
         // Use the DbContext here
         var dbContext = services.GetRequiredService<ApplicationDbContext>();
+
         // Perform database operations
+        var employees = dbContext.Employees.ToList();
+        foreach (var employee in employees)
+        {
+            logger.LogInformation($"Employee Id: {employee.EmployeeId}, Name: {employee.EmployeeName}");
+        }
+
         logger.LogInformation("Database operations performed successfully.");
     }
     catch (Exception ex)

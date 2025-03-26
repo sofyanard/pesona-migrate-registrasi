@@ -9,7 +9,6 @@ namespace pesona_migrate_registrasi
         {
         }
 
-        // Define your DbSets here. For example:
-        // public DbSet<YourEntity> YourEntities { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }
