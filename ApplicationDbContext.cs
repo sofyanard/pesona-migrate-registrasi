@@ -9,6 +9,7 @@ namespace pesona_migrate_registrasi
         {
         }
 
-        public DbSet<Employee> Employees { get; set; }
+        // public DbSet<Employee> Employees { get; set; }
+        public DbSet<RefAplikasi> RefAplikasis { get; set; }
     }
 }

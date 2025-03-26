@@ -36,10 +36,10 @@ using (var scope = host.Services.CreateScope())
         var dbContext = services.GetRequiredService<ApplicationDbContext>();
 
         // Perform database operations
-        var employees = dbContext.Employees.ToList();
-        foreach (var employee in employees)
+        var refaplikasis = dbContext.RefAplikasis.ToList();
+        foreach (var refaplikasi in refaplikasis)
         {
-            logger.LogInformation($"Employee Id: {employee.EmployeeId}, Name: {employee.EmployeeName}");
+            logger.LogInformation($"RefAplikasi Id: {refaplikasi.KdApp}, Name: {refaplikasi.NmApp}");
         }
 
         logger.LogInformation("Database operations performed successfully.");
