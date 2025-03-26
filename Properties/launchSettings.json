@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "pesona-migrate-registrasi": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
