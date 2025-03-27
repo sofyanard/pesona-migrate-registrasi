@@ -27,6 +27,9 @@ var host = Host.CreateDefaultBuilder(args)
             config.AddConsole();
             config.AddDebug();
         });
+
+        // Register RefAplikasiProcess
+        services.AddTransient<RefAplikasiProcess>();
     })
     .Build();
 

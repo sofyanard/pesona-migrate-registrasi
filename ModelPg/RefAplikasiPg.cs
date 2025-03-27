@@ -28,7 +28,7 @@ namespace pesona_migrate_registrasi.ModelPg
         [DefaultValue("127.0.0.1")]
         public string? URL { get; set; }
 
-        [Column("flagsso")]
+        [Column("flag_sso")]
         [DefaultValue(0)]
         public byte? FlagSso { get; set; }
     }
